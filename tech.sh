@@ -36,10 +36,15 @@ echo ""
 echo "Virtual Environment:"
 if [ -d "Backend/venv" ]; then
     source Backend/venv/bin/activate
+    echo "FastApi"
     pip show fastapi 2>/dev/null | grep Version || echo "FastAPI not installed in venv"
+    echo "Sentence Transformers"
     pip show sentence-transformers 2>/dev/null | grep Version || echo "sentence-transformers not installed in venv"
+    echo "FAISS"
     pip show faiss-cpu 2>/dev/null | grep Version || echo "FAISS not installed in venv"
+    echo "NetworkX"
     pip show networkx 2>/dev/null | grep Version || echo "NetworkX not installed in venv"
+    echo "AsyncPG"
     pip show asyncpg 2>/dev/null | grep Version || echo "asyncpg not installed in venv"
     deactivate
 else
